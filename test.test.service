@@ -1,0 +1,11 @@
+[Unit]
+Description=Test test
+
+[Service]
+ExecStart=/root/itmo/linux/1_lab/test.test
+Type=simple
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+Alias=test.service

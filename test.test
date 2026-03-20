@@ -1,0 +1,15 @@
+#!/bin/bash
+
+CONFIG_FILE=/etc/default/test.test
+
+if [ ! -r "$CONFIG_FILE" ]; then
+    echo "Config file $CONFIG_FILE is not available" >&2
+    exit 1
+fi
+
+. "$CONFIG_FILE"
+
+while true; do
+    echo "$(date): ${VAR1} ${VAR2}" >>/var/log/test.test.log
+    sleep 5
+done
